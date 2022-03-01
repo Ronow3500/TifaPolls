@@ -11,7 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
+mix.js('vendor/twbs/bootstrap/dist/js/bootstrap.bundle.js', 'public/assets/twbs/js/bootstrap.bundle.js')
+    .sass('vendor/twbs/bootstrap/scss/bootstrap.scss', 'public/assets/twbs/styles/bootstrap.css', [
         //
     ]);
