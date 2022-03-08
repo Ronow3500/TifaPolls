@@ -12,7 +12,7 @@ window.addEventListener("load",function(){
 })
 
 function showPopup(){
-    const timeLimit = 3 // seconds;
+    const timeLimit = 60 // seconds;
     let i=0;
     const timer = setInterval(function(){
      i++;

@@ -18,6 +18,12 @@ Route::get('/', function () {
     return view('index');
 });
 
+// Password Reset Route
+Route::get('password.reset', function ()
+{
+    return view('password_reset');
+})->name('password_reset');
+
 // Import Routes
 Route::get('import', [PollsController::class, 'index']);
 Route::post('import', [PollsController::class, 'import'])->name('import');
