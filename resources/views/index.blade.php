@@ -4,7 +4,13 @@
 
   <div class="container-fluid bg-dark">
   <!-- Main content here -->
-     <iframe width="100%" height="950" src="https://datastudio.google.com/embed/reporting/cc23d1f8-bc58-4d2f-853c-e7660cf05ffe/page/d3mlC" frameborder="0" style="border:0" allowfullscreen></iframe>
+  @if(session('success'))
+    <div class="alert alert-success">
+      {{ session('success') }}
+    </div>
+  @endif
+  
+  <iframe width="100%" height="950" src="https://datastudio.google.com/embed/reporting/cc23d1f8-bc58-4d2f-853c-e7660cf05ffe/page/d3mlC" frameborder="0" style="border:0" allowfullscreen></iframe>
 
 
   @guest   

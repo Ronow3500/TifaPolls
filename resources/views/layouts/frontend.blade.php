@@ -111,13 +111,25 @@
         </div>
         <!-- Modal Body -->
         <div class="modal-body">
+          @if(session('status'))
+           <div class="is-valid">
+             {{ session('status') }}
+           </div>
+          @endif
+
+          @if(session('success'))
+           <div class="is-valid">
+             {{ session('success') }}
+           </div>
+          @endif
           <input type="email" name="email" class="form-control form-control-lg" placeholder="Your email">
+          
           <div class="mt-3"></div>
           <input type="password" name="password" class="form-control form-control-lg" placeholder=" password">
         </div>
         <!-- Modal Footer -->
         <div class="modal-footer">
-          <a href="{{ url('password_reset') }}"
+          <a href="{{ route('forgot_password') }}"
              class="btn btn-warning btn-sm pl-0"
              title="Forgot Password ?"
           >

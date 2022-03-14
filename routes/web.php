@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PollsController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,11 +20,13 @@ Route::get('/', function () {
 });
 
 // Password Reset Route
-Route::get('password.reset', function ()
-{
-    return view('password_reset');
-})->name('password_reset');
+Route::get('forgot_password', [UserController::class, 'forgot_password'])->name('forgot_password');
 
-// Import Routes
-Route::get('import', [PollsController::class, 'index']);
-Route::post('import', [PollsController::class, 'import'])->name('import');
+// Backend Routes
+Route::middleware('auth')->group(function ()
+{
+    Route::get('import', [PollsController::class, 'index']);
+    Route::post('import', [PollsController::class, 'import'])->name('import');
+    Route::get('table', [PollsController::class, 'table']);
+    Route::get('data_studio', [PollsController::class, 'data_studio']);
+});

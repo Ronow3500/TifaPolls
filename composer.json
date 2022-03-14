@@ -6,7 +6,9 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "almasaeed2010/adminlte": "~3.1",
         "guzzlehttp/guzzle": "^7.2",
+        "infyomlabs/laravel-ui-adminlte": "^4.0",
         "laravel/fortify": "^1.11",
         "laravel/framework": "^9.2",
         "laravel/sanctum": "^2.14.1",

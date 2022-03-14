@@ -1,4 +1,4 @@
-@extends('layouts.frontend')
+@extends('backend.layouts.main')
 
 @section('content')
 
@@ -27,7 +27,8 @@
           </div>
         </div>
         <div class="card-footer">
-          <button type="submit" class="btn btn-primary">Import</button>
+          <button type="submit" class="btn btn-warning float-right">Import
+            <i class="fa fa-upload"></i></button>
         </div>
       </div>
     </form>
