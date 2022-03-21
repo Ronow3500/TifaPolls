@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\Backend\RoleController;
+use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\PollsController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,10 +24,21 @@ Route::get('/', function () {
 Route::get('forgot_password', [UserController::class, 'forgot_password'])->name('forgot_password');
 
 // Backend Routes
-Route::middleware('auth')->group(function ()
+Route::middleware('auth')->prefix('backend')->name('backend.')->group(function ()
 {
+    // Imports
     Route::get('import', [PollsController::class, 'index']);
     Route::post('import', [PollsController::class, 'import'])->name('import');
+
+    // Polls table
     Route::get('table', [PollsController::class, 'table']);
+
+    // Data Studio Preview
     Route::get('data_studio', [PollsController::class, 'data_studio']);
+
+    //Roles
+    Route::resource('roles', RoleController::class);
+
+    //Users
+    Route::resource('users', UserController::class);
 });

@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
+  <form action="{{ route('backend.import') }}" method="POST" enctype="multipart/form-data">
       @csrf
       <div class="card">
         <div class="card-header">
