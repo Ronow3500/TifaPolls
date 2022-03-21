@@ -15,7 +15,7 @@
   <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand" href="{{ url('/') }}">
-        <img src="{{ asset('images/logo.png') }}" alt="TIFA Opinion Polls">
+        <img src="{{ asset('images/logo.png') }}" alt="TIFA Opinion Polls" class="img img-fluid" style="width: 100px;height: 100px;">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
       <span class="navbar-toggler-icon"></span>
@@ -89,8 +89,8 @@
         <!-- Modal Footer -->
         <div class="modal-footer">
            <button type="submit" class="btn btn-primary pr-0">
-                  Register
-              </button>
+              Register
+            </button>
         </div>
       </div>
     </form>

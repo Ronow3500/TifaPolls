@@ -4,7 +4,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ config('app.name') ?? 'Tifa Polls Backend' }}</title>
+<title>
+  {{ config('app.name') ?? 'Tifa Polls Backend' }}
+</title>
 <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.jpeg') }}">
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -23,7 +25,7 @@
 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
 </li>
 <li class="nav-item d-none d-sm-inline-block">
-<a href="http://polls.tifaresearch.com" class="nav-link">Frontend</a>
+<a href="{{ url('/') }}" class="nav-link">Frontend</a>
 </li>
 <li class="nav-item d-none d-sm-inline-block">
 <a href="#" class="nav-link">Contact</a>

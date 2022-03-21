@@ -65,7 +65,6 @@ body{
 	background-image: url('../../images/logo.png');
 	background-size: cover;
 	background-position: center;
-	animation: zoomInOut 7s linear infinite;
 	z-index: -1;
 
 }
