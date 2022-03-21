@@ -41,13 +41,13 @@
 				<ul class="nav nav-treeview">
 					<li class="nav-item">
 						<a href="{{ url('backend/users') }}" class="nav-link active">
-							<i class="fas fa-th nav-icon"></i>
+							<i class="fa fa-users nav-icon"></i>
 							<p>Users</p>
 						</a>
 					</li>
 					<li class="nav-item">
 						<a href="{{ url('backend/roles') }}" class="nav-link active">
-							<i class="fas fa-th nav-icon"></i>
+							<i class="fa-solid fa-lock nav-icon"></i>
 							<p>Roles</p>
 						</a>
 					</li>
@@ -59,14 +59,14 @@
 					</li>
 					<li class="nav-item">
 						<a href="{{ url('backend/data_studio') }}" class="nav-link">
-							<i class="far fa-circle nav-icon"></i>
+							<i class="fa-solid fa-chart-line nav-icon"></i>
 							<p>Data Studio</p>
 						</a>
 					</li>
 				</ul>
 			</li>
 			<li class="nav-item">
-			<a href="{{ asset('import') }}" class="nav-link">
+			<a href="{{ route('backend.import') }}" class="nav-link">
 			<i class="nav-icon fas fa-upload"></i>
 			<p>
 			Import
