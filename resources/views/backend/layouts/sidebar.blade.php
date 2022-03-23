@@ -12,7 +12,7 @@
 <img src="{{ asset('images/avatar.png') }}" class="img-circle elevation-2" alt="User Image">
 </div>
 <div class="info">
-<a href="#" class="d-block">User Name</a>
+<a href="#" class="d-block">{{ auth()->user()->first_name }}</a>
 </div>
 </div>
 

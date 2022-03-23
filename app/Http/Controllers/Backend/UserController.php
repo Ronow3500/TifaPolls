@@ -7,6 +7,7 @@ use App\Http\Requests\StoreUserRequest;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class UserController extends Controller
 {
@@ -17,9 +18,16 @@ class UserController extends Controller
      */
     public function index()
     {
-        $data['users'] = User::paginate(10);
+        if (Gate::allows('is-admin'))
+        {
+            $data['users'] = User::paginate(10);
 
-        return view('backend.users.index', $data);
+            return view('backend.users.index', $data);
+        }
+        else
+        {
+            dd('Access denied');
+        }
     }
 
     /**
@@ -48,7 +56,7 @@ class UserController extends Controller
 
         $user->roles()->sync($request->roles);
 
-        return redirect()->back()->with('success', 'User successfully added the system ');
+        return redirect()->back()->with('success', 'User successfully added to the system ');
     }
 
     /**
@@ -57,11 +65,22 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        $data['user'] = User::find($id);
+        $data['user']  = User::find($id);
 
-        return view('backend.users.show', $data);
+        if ($data['user'])
+        {
+            $data['roles'] = Role::all();
+
+            return view('backend.users.show', $data);
+        }
+        else
+        {
+            $request->session()->flash('warning', 'User no longer exists in the system');
+
+            return redirect(route('backend.users.index'));
+        }
     }
 
     /**
@@ -70,12 +89,22 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
         $data['user']  = User::find($id);
-        $data['roles'] = Role::all();
 
-        return view('backend.users.edit', $data);
+        if ($data['user'])
+        {
+            $data['roles'] = Role::all();
+
+            return view('backend.users.edit', $data);
+        }
+        else
+        {
+            $request->session()->flash('warning', 'User no longer exists in the system');
+
+            return redirect(route('backend.users.index'));
+        }
     }
 
     /**

@@ -24,7 +24,7 @@ Route::get('/', function () {
 Route::get('forgot_password', [UserController::class, 'forgot_password'])->name('forgot_password');
 
 // Backend Routes
-Route::middleware('auth')->prefix('backend')->name('backend.')->group(function ()
+Route::middleware(['auth','is-admin'])->prefix('backend')->name('backend.')->group(function ()
 {
     // Imports
     Route::get('import', [PollsController::class, 'index']);

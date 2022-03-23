@@ -17,6 +17,9 @@
     <a class="navbar-brand" href="{{ url('/') }}">
         <img src="{{ asset('images/logo.png') }}" alt="TIFA Opinion Polls" class="img img-fluid" style="width: 100px;height: 100px;">
     </a>
+
+    @include('layouts/alerts')
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -43,6 +46,7 @@
     </div>
   </div>
 </nav>
+
 <!-- Register Modal -->
   <div class="modal fade" id="register-modal">
     <div class="modal-dialog">
